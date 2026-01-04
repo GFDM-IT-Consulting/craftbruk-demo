@@ -1,0 +1,11 @@
+name = "CraftBruk Theme"
+license = "MIT"
+licenselink = ""
+description = "Custom theme for CraftBruk"
+homepage = ""
+tags = []
+features = []
+min_version = "0.100.0"
+
+[author]
+  name = "CraftBruk"

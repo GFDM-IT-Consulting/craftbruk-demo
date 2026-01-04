@@ -1,0 +1,29 @@
+baseURL = 'https://craftbruk.pl/'
+languageCode = 'pl-PL'
+title = 'CraftBruk - Kostka Brukowa Warszawa i Okolice | Bruk bez kompromisów'
+theme = 'craftbruk'
+
+[params]
+  description = 'CraftBruk - profesjonalne układanie kostki brukowej w Warszawie i okolicach. Podjazdy, chodniki, tarasy, parkingi. Bezpłatna wycena. Tel: 501 158 724'
+  keywords = 'kostka brukowa Warszawa, brukarz Warszawa, układanie kostki brukowej, podjazd z kostki, chodnik z kostki, brukowanie Warszawa, kostka brukowa okolice Warszawy, usługi brukarskie Warszawa, bruk Piaseczno, bruk Pruszków, bruk Legionowo, kostka brukowa mazowieckie, CraftBruk'
+  author = 'CraftBruk'
+  phone = '+48501158724'
+  email = 'biuro@craftbruk.pl'
+  address = 'Warszawa i okolice, woj. mazowieckie'
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[outputs]
+  home = ['HTML']
+
+# Sitemap configuration for SEO
+[sitemap]
+  changefreq = 'weekly'
+  filename = 'sitemap.xml'
+  priority = 0.5
+
+# Robots.txt
+enableRobotsTXT = true

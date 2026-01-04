@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
+    <meta name="description" content="{{ .Site.Params.description }}">
+    <meta name="keywords" content="{{ .Site.Params.keywords }}">
+    <meta name="author" content="{{ .Site.Params.author }}">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ .Permalink }}">
+    <meta property="og:title" content="{{ .Site.Title }}">
+    <meta property="og:description" content="{{ .Site.Params.description }}">
+    <meta property="og:image" content="{{ .Site.BaseURL }}images/CraftBruk%20-%20logo.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="{{ .Site.Title }}">
+    <meta property="twitter:description" content="{{ .Site.Params.description }}">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="{{ .Permalink }}">
+
+    <!-- Favicon -->
+    <link rel="icon" href="{{ .Site.BaseURL }}favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ .Site.BaseURL }}images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ .Site.BaseURL }}images/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ .Site.BaseURL }}images/apple-touch-icon.png">
+    <link rel="manifest" href="{{ .Site.BaseURL }}site.webmanifest">
+    <meta name="theme-color" content="#1A1A1A">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="{{ .Site.BaseURL }}css/main.css">
+
+    <!-- Schema.org LocalBusiness -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "{{ .Site.Title }}",
+        "image": "{{ .Site.BaseURL }}images/CraftBruk%20-%20logo.png",
+        "description": "{{ .Site.Params.description }}",
+        "address": {
+            "@type": "PostalAddress",
+            "addressRegion": "mazowieckie",
+            "addressLocality": "Warszawa",
+            "addressCountry": "PL"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "52.2297",
+            "longitude": "21.0122"
+        },
+        "url": "{{ .Site.BaseURL }}",
+        "telephone": "+48501158724",
+        "email": "biuro@craftbruk.pl",
+        "priceRange": "$$",
+        "areaServed": {
+            "@type": "GeoCircle",
+            "geoMidpoint": {
+                "@type": "GeoCoordinates",
+                "latitude": "52.2297",
+                "longitude": "21.0122"
+            },
+            "geoRadius": "50000"
+        },
+        "serviceType": ["Układanie kostki brukowej", "Brukowanie", "Budowa podjazdów", "Chodniki", "Tarasy"]
+    }
+    </script>
+</head>
+<body>
+    {{ partial "slider.html" . }}
+
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <img src="{{ .Site.BaseURL }}images/CraftBruk%20-%20logo.png" alt="CraftBruk - Logo firmy brukarskiej Warszawa">
+            </div>
+            <nav class="nav" id="mainNav">
+                <a href="#o-nas">O nas</a>
+                <a href="#uslugi">Usługi</a>
+                <a href="#dlaczego-my">Dlaczego my</a>
+                <a href="#kontakt">Kontakt</a>
+            </nav>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        {{ block "main" . }}{{ end }}
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="{{ .Site.BaseURL }}images/CraftBruk%20-%20logo.png" alt="CraftBruk Logo">
+                    <p>Bruk bez kompromisów</p>
+                </div>
+                <div class="footer-contact">
+                    <h4>Kontakt</h4>
+                    <p><a href="tel:+48501158724">501 158 724</a></p>
+                    <p><a href="mailto:biuro@craftbruk.pl">biuro@craftbruk.pl</a></p>
+                </div>
+                <div class="footer-area">
+                    <h4>Obszar działania</h4>
+                    <p>Warszawa i okolice</p>
+                    <p>woj. mazowieckie</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; {{ now.Year }} CraftBruk. Wszystkie prawa zastrzeżone.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{{ .Site.BaseURL }}js/main.js"></script>
+</body>
+</html>
